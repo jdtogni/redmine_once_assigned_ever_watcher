@@ -19,5 +19,12 @@ module OnceAssignedEverWatcher
       end
     end
     
+    def controller_issues_bulk_edit_before_save(context={})
+      controller_issues_edit_before_save(context)
+    end
+
+    def controller_issues_new_after_save(context={})
+      controller_issues_edit_before_save(context)
+    end
   end
 end
